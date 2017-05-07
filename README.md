@@ -1,3 +1,3 @@
 # JavaScriptTraining
 
-原生JS实现一些基本组件
+练习JavaScript
