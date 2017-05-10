@@ -5,66 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>渐变轮播图</title>
-    <style>
-        li{
-            list-style: none;
-        }
-        .con{
-            width: 1024px;
-            height: 576px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .pic-co li{
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: all 1s ease;
-            opacity: 0;
-        }
-        .pic-co .on{
-            opacity: 1;
-        }
-        .focus-point{
-            position: absolute;
-            bottom: 10px;
-            left: 400px;
-        }
-        .focus-point li{
-            float: left;
-            width: 20px;
-            height: 20px;
-            line-height: 20px;
-            border-radius: 50%;
-            text-align: center;
-            background: #aaa;
-            margin-right: 10px;
-        }
-        .focus-point .on{
-            background: red;
-        }
-        .choosebtu{
-            width: 50px;
-            height: 76px;
-            background-color: #D8D8D8;
-            text-align: center;
-            line-height: 76px;
-            opacity: 0.8;
-        }
-        .choosebtu:hover{
-            background-color: #505050;
-        }
-        #left{
-            position: absolute;
-            left:0;
-            top: 250px;
-        }
-        #right{
-            position: absolute;
-            right:0;
-            top: 250px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/co.css">
 </head>
 <body>
     <div class="con">
@@ -81,76 +22,6 @@
         <div class="choosebtu" id="left"><</div>
         <div class="choosebtu" id="right">></div>
     </div>
-    <script>
-        var con = document.getElementsByClassName("con")[0];
-
-        var pic = document.getElementsByClassName("pic-co")[0];
-        var pic_list = pic.getElementsByTagName("li");
-
-        var point = document.getElementsByClassName("focus-point")[0];
-
-        var left = document.getElementById("left");
-        var right = document.getElementById("right");
-
-        for (var i = 0; i < pic_list.length; i++) {
-            var creli = document.createElement("li");
-            point.appendChild(creli);
-        }
-        var point_list = point.getElementsByTagName("li");
-        point_list[0].className = "on";
-
-        var num = 0;
-        var a = null;
-        function autoPlay(){
-            a = setInterval(function(){
-                num++;
-                if(num >= pic_list.length){
-                    num = 0;
-                }
-                play(num);
-            },2000);
-        }
-        function play(num){
-            for (var i = 0; i < pic_list.length; i++) {
-                pic_list[i].className = "";
-                point_list[i].className = "";
-            }
-            pic_list[num].className = "on";
-            point_list[num].className = "on";
-        }
-
-        //点击左右切换
-        left.addEventListener("click",function(){
-            num -= 1;
-            if(num < 0){
-                num=pic_list.length-1;
-            }
-            play(num);
-        });
-        right.addEventListener("click",function(){
-            num++;
-            if(num >= pic_list.length){
-                num = 0;
-            }
-            play(num);
-        });
-        //鼠标移入移出
-        con.addEventListener("mouseover",function(){
-            clearInterval(a);
-        });
-        con.addEventListener("mouseout",function(){
-            autoPlay();
-        });
-        //鼠标移入焦点，切换到对应图片
-        for(let i=0,n=point_list.length;i<n;i++){
-            point_list[i].addEventListener("mouseover",function(){
-                num = i;
-                play(i);
-            });
-        }
-        (function(){
-            autoPlay();
-        });
-    </script>
+    <script src="js/co.js"></script>
 </body>
 </html>

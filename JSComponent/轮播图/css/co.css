@@ -1,0 +1,58 @@
+        li{
+            list-style: none;
+        }
+        .con{
+            width: 1024px;
+            height: 576px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .pic-co li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 1s ease;
+            opacity: 0;
+        }
+        .pic-co .on{
+            opacity: 1;
+        }
+        .focus-point{
+            position: absolute;
+            bottom: 10px;
+            left: 400px;
+        }
+        .focus-point li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            background: #aaa;
+            margin-right: 10px;
+        }
+        .focus-point .on{
+            background: red;
+        }
+        .choosebtu{
+            width: 50px;
+            height: 76px;
+            background-color: #D8D8D8;
+            text-align: center;
+            line-height: 76px;
+            opacity: 0.8;
+        }
+        .choosebtu:hover{
+            background-color: #505050;
+        }
+        #left{
+            position: absolute;
+            left:0;
+            top: 250px;
+        }
+        #right{
+            position: absolute;
+            right:0;
+            top: 250px;
+        }
