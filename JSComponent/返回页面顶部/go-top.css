@@ -1,0 +1,11 @@
+.go-top{
+    position: fixed;
+    bottom: 100px;
+    right: 400px;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+.go-top-show{
+    display: block; 
+}
